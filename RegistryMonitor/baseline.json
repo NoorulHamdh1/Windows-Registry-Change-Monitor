@@ -1,0 +1,11 @@
+{
+    "OneDrive": "\"C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe\" /background",
+    "AMDNoiseSuppression": "\"C:\\WINDOWS\\system32\\AMD\\ANR\\AMDNoiseSuppression.exe\"",
+    "Steam": "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent",
+    "Spotify": "\"C:\\Users\\nooru\\AppData\\Roaming\\Spotify\\Spotify.exe\" --autostart --minimized",
+    "RiotClient": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-background-mode",
+    "Microsoft.Lists": "C:\\Program Files\\Microsoft OneDrive\\26.095.0519.0003\\OneDrive.Sync.Service.exe",
+    "MicrosoftEdgeAutoLaunch_21E951D8578F459A0DA0CD8EAEEA4E12": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start",
+    "MicrosoftCopilotAutoLaunch_8C028224E5E6148D2DDADB433E6D0F04": "\"C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe\" --no-startup-window --win-session-start",
+    "app.musicpresence.desktop": "\"C:\\Users\\nooru\\AppData\\Local\\Music Presence\\latest\\Music Presence.exe\" "
+}
