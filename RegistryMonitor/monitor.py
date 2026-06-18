@@ -1,3 +1,4 @@
+from logger import write_log
 import winreg
 import time
 
@@ -63,78 +64,36 @@ def get_registry_entries():
     return all_entries
 
 
-previous_state = get_registry_entries()
+def start_monitor():
 
-print("\n===== INITIAL REGISTRY SNAPSHOT =====\n")
+    previous_state = get_registry_entries()
 
-for location in previous_state:
+    print("\n===== INITIAL REGISTRY SNAPSHOT =====\n")
 
-    print(
-        f"{location}: "
-        f"{len(previous_state[location])} entries"
-    )
-
-print("\n=====================================\n")
-
-print("Monitoring started...")
-print("Checking every 10 seconds...\n")
-
-while True:
-
-    time.sleep(10)
-
-    current_state = get_registry_entries()
-
-    # ADDED
-    for location in current_state:
-
-        for key in current_state[location]:
-
-            if key not in previous_state.get(location, {}):
-
-                new_value = (
-                    current_state[location][key]
-                    if current_state[location][key]
-                    else "NIL"
-                )
-
-                print(f"\n[ADDED] {key}")
-                print(f"Location: {location}")
-                print("Old: NIL")
-                print(f"New: {new_value}")
-
-    # DELETED
     for location in previous_state:
 
-        for key in previous_state[location]:
+        print(
+            f"{location}: "
+            f"{len(previous_state[location])} entries"
+        )
 
-            if key not in current_state.get(location, {}):
+    print("\n=====================================\n")
 
-                old_value = (
-                    previous_state[location][key]
-                    if previous_state[location][key]
-                    else "NIL"
-                )
+    print("Monitoring started...")
+    print("Checking every 10 seconds...\n")
 
-                print(f"\n[DELETED] {key}")
-                print(f"Location: {location}")
-                print(f"Old: {old_value}")
-                print("New: NIL")
+    while True:
 
-    # MODIFIED
-    for location in previous_state:
+        time.sleep(10)
 
-        for key in previous_state[location]:
+        current_state = get_registry_entries()
 
-            if key in current_state.get(location, {}):
+        # ADDED
+        for location in current_state:
 
-                if previous_state[location][key] != current_state[location][key]:
+            for key in current_state[location]:
 
-                    old_value = (
-                        previous_state[location][key]
-                        if previous_state[location][key]
-                        else "NIL"
-                    )
+                if key not in previous_state.get(location, {}):
 
                     new_value = (
                         current_state[location][key]
@@ -142,9 +101,84 @@ while True:
                         else "NIL"
                     )
 
-                    print(f"\n[MODIFIED] {key}")
+                    print(f"\n[ADDED] {key}")
                     print(f"Location: {location}")
-                    print(f"Old: {old_value}")
+                    print("Old: NIL")
                     print(f"New: {new_value}")
 
-    previous_state = current_state.copy()
+                    write_log(
+                        "[ADDED]",
+                        location,
+                        key,
+                        "NIL",
+                        new_value
+                    )
+
+        # DELETED
+        for location in previous_state:
+
+            for key in previous_state[location]:
+
+                if key not in current_state.get(location, {}):
+
+                    old_value = (
+                        previous_state[location][key]
+                        if previous_state[location][key]
+                        else "NIL"
+                    )
+
+                    print(f"\n[DELETED] {key}")
+                    print(f"Location: {location}")
+                    print(f"Old: {old_value}")
+                    print("New: NIL")
+
+                    write_log(
+                        "[DELETED]",
+                        location,
+                        key,
+                        old_value,
+                        "NIL"
+                    )
+
+        # MODIFIED
+        for location in previous_state:
+
+            for key in previous_state[location]:
+
+                if key in current_state.get(location, {}):
+
+                    if (
+                        previous_state[location][key]
+                        != current_state[location][key]
+                    ):
+
+                        old_value = (
+                            previous_state[location][key]
+                            if previous_state[location][key]
+                            else "NIL"
+                        )
+
+                        new_value = (
+                            current_state[location][key]
+                            if current_state[location][key]
+                            else "NIL"
+                        )
+
+                        print(f"\n[MODIFIED] {key}")
+                        print(f"Location: {location}")
+                        print(f"Old: {old_value}")
+                        print(f"New: {new_value}")
+
+                        write_log(
+                            "[MODIFIED]",
+                            location,
+                            key,
+                            old_value,
+                            new_value
+                        )
+
+        previous_state = current_state.copy()
+
+
+if __name__ == "__main__":
+    start_monitor()
