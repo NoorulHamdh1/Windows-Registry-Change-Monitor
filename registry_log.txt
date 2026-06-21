@@ -1,0 +1,14 @@
+[2026-06-18 22:45:23]
+[ADDED]
+Location: HKCU_RunOnce
+Key: TestMalware
+Old: NIL
+New: C:\test.exe
+--------------------------------------------------
+[2026-06-18 22:45:33]
+[DELETED]
+Location: HKCU_RunOnce
+Key: TestMalware
+Old: C:\test.exe
+New: NIL
+--------------------------------------------------
