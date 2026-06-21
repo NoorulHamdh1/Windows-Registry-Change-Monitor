@@ -7,6 +7,8 @@
         "RiotClient": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-background-mode",
         "Microsoft.Lists": "C:\\Program Files\\Microsoft OneDrive\\26.095.0519.0003\\OneDrive.Sync.Service.exe",
         "app.musicpresence.desktop": "\"C:\\Users\\nooru\\AppData\\Local\\Music Presence\\latest\\Music Presence.exe\" ",
+        "RobloxPlayerBeta": "\"C:\\Users\\nooru\\AppData\\Local\\Roblox\\Versions\\version-8884371d30284041\\RobloxPlayerBeta.exe\" --launch-to-tray",
+        "Proton VPN": "C:\\Program Files\\Proton\\VPN\\ProtonVPN.Launcher.exe \"----ms-protocol:ms-encodedlaunch:App?ContractId=Windows.StartupTask&TaskId=Proton%20VPN\"",
         "MicrosoftCopilotAutoLaunch_8C028224E5E6148D2DDADB433E6D0F04": "\"C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe\" --no-startup-window --win-session-start",
         "MicrosoftEdgeAutoLaunch_21E951D8578F459A0DA0CD8EAEEA4E12": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start"
     },
@@ -17,5 +19,8 @@
         "CloudflareWARP": "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\Cloudflare WARP.exe",
         "vmware-tray.exe": "\"C:\\Program Files\\VMware\\VMware Workstation\\vmware-tray.exe\""
     },
-    "HKLM_RunOnce": {}
+    "HKLM_RunOnce": {
+        "msedge_cleanup_{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}": "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.80\\Installer\\setup.exe\" --msedgewebview --delete-old-versions --system-level --verbose-logging --on-logon",
+        "msedge_cleanup_{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\149.0.4022.80\\Installer\\setup.exe\" --msedge --channel=stable --delete-old-versions --system-level --verbose-logging --on-logon"
+    }
 }

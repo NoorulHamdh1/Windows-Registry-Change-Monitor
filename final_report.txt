@@ -1,16 +1,16 @@
 
 WINDOWS REGISTRY CHANGE REPORT
 
-Generated: 2026-06-18 22:46:04
+Generated: 2026-06-22 00:10:35
 
 ==================================================
 
 SUMMARY
 
-Total Events   : 2
-Added Events   : 1
-Modified Events: 0
-Deleted Events : 1
+Total Events   : 5
+Added Events   : 2
+Modified Events: 1
+Deleted Events : 2
 
 ==================================================
 
@@ -28,6 +28,27 @@ New: C:\test.exe
 Location: HKCU_RunOnce
 Key: TestMalware
 Old: C:\test.exe
+New: NIL
+--------------------------------------------------
+[2026-06-22 00:06:54]
+[ADDED]
+Location: HKCU_RunOnce
+Key: TestMalware
+Old: NIL
+New: C:\test.exe
+--------------------------------------------------
+[2026-06-22 00:07:24]
+[MODIFIED]
+Location: HKCU_RunOnce
+Key: TestMalware
+Old: C:\test.exe
+New: C:\evil.exe
+--------------------------------------------------
+[2026-06-22 00:07:34]
+[DELETED]
+Location: HKCU_RunOnce
+Key: TestMalware
+Old: C:\evil.exe
 New: NIL
 --------------------------------------------------
 
